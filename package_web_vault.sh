@@ -76,9 +76,10 @@ npm run dist
 #find build -name "*.map" -delete
 
 # Prepare the final archives
-tar -czvf "../$OUTPUT_NAME" build --owner=0 --group=0
+cd build
+tar -czvf "../../$OUTPUT_NAME" ./* --owner=0 --group=0
 
-cd ..
+cd ../..
 
 if [[ $UPLOAD_VAULT =~ ^[Yy]$ ]]
 then
